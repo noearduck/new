@@ -70,12 +70,12 @@ function zoomIn() {
         const centerX = imgRect.left + imgRect.width / 2;
         const centerY = imgRect.top + imgRect.height / 2;
 
-        // 새 이미지를 중앙에 배치
+        // 새 이미지를 확대 기준점에 배치
         selectImage.style.position = 'absolute';
-        selectImage.style.left = centerX;
-        selectImage.style.top = centerY;
-        selectImage.style.display = 'block';
-    }, 1000); // 확대 애니메이션 시간과 일치하도록 설정
+        selectImage.style.left = centerX - (selectImage.width / 2) + 'px';
+        selectImage.style.top = centerY - (selectImage.height / 2) + 'px';
+        selectImage.style.display = 'block'; // 새 이미지 표시
+    }, 700); // 확대 애니메이션 시간과 일치하도록 설정
 }
 
 
