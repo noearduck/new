@@ -63,20 +63,22 @@ function zoomIn() {
     setTimeout(() => {
         const imageContainer = document.getElementById('imageContainer');
         imageContainer.style.display = 'block';
+        
         const selectImage = document.getElementById('selectimage');
         
-        // 확대된 이미지의 중앙에 위치
+        // 확대된 이미지의 중앙 위치 계산
         const imgRect = img.getBoundingClientRect();
-        const containerRect = imageContainer.getBoundingClientRect();
-        const centerX = imgRect.left + imgRect.width / 2 - containerRect.left - selectImage.width / 2;
-        const centerY = imgRect.top + imgRect.height / 2 - containerRect.top - selectImage.height / 2;
+        const centerX = imgRect.left + imgRect.width / 2;
+        const centerY = imgRect.top + imgRect.height / 2;
 
+        // 새 이미지를 확대된 이미지의 중앙에 위치시키기
         selectImage.style.position = 'absolute';
-        selectImage.style.left = centerX + 'px';
-        selectImage.style.top = centerY + 'px';
+        selectImage.style.left = centerX - (selectImage.width / 2) + 'px';
+        selectImage.style.top = centerY - (selectImage.height / 2) + 'px';
         selectImage.style.display = 'block';
-    }, 500); // 확대 애니메이션 시간과 일치하도록 설정
+    }, 1000); // 확대 애니메이션 시간과 일치하도록 설정
 }
+
 
 
 function zoomOut() {
