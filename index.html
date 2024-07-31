@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>집안 내부 일러스트</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="image-container">
+            <img id="main-image" src="assets/house-illustration.jpg" alt="집안 내부 일러스트">
+            <div class="highlight" id="highlight-frame"></div>
+            <div id="options" class="hidden">
+                <p id="option-text">선택지:</p>
+                <button id="zoom-in-button" onclick="zoomIn()">자세히 본다</button>
+                <button onclick="hideOptions()">그만 본다</button>
+            </div>
+            <button id="back-button" class="hidden" onclick="zoomOut()">뒤로가기</button>
+            <div id="imageContainer" class="hidden">
+                <button id="closeButton">X</button>
+                <img id="selectimage" src="assets/duck.jpg" alt="이미지" class="zoomed-image">
+                <button id="showButton" onclick="showImage()" class="hidden">이미지 보기</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
