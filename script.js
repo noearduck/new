@@ -10,7 +10,7 @@ document.getElementById('main-image').addEventListener('mousemove', function(eve
 
     const areas = [
         {name: 'coffee', x: 90, y: 260, width: 80, height: 120},
-        {name: 'fruit', x: 300, y: 250, width: 10, height: 10},
+        {name: 'fruit', x: 300, y: 250, width: 120, height: 100},
         {name: 'desk', x: 450, y: 300, width: 100, height: 100}
     ];
 
@@ -64,7 +64,7 @@ function zoomIn() {
         const imageContainer = document.getElementById('imageContainer');
         imageContainer.style.display = 'block';
         document.getElementById('selectimage').style.display = 'block';
-    }, 500); // 확대 애니메이션 시간과 일치하도록 설정
+    }, 1000); // 확대 애니메이션 시간과 일치하도록 설정
 }
 
 function zoomOut() {
