@@ -51,32 +51,34 @@ function hideOptions() {
 
 function zoomIn() {
     const img = document.getElementById('main-image');
+    const selectImage = document.getElementById('selectimage');
     const scale = 2;
 
+    // 이미지 확대 애니메이션 시작
+    img.style.transition = 'transform 0.5s ease'; // 애니메이션 시간 설정
     img.style.transform = `scale(${scale})`;
     document.getElementById('options').style.display = 'none';
     document.getElementById('back-button').style.display = 'block';
     document.getElementById('highlight-frame').style.display = 'none';
     isZoomedIn = true;
 
-    // 확대 애니메이션이 완료된 후에 이미지 보여주기
-    setTimeout(() => {
-        const imageContainer = document.getElementById('imageContainer');
-        imageContainer.style.display = 'block';
-        
-        const selectImage = document.getElementById('selectimage');
-        
-        // 확대된 이미지의 중앙 위치 계산
-        const centerX = imgRect.left + imgRect.width / 2;
-        const centerY = imgRect.top + imgRect.height / 2;
+    // 확대 기준점 계산
+    const imgRect = img.getBoundingClientRect();
+    const centerX = imgRect.left + imgRect.width / 2;
+    const centerY = imgRect.top + imgRect.height / 2;
 
-        // 새 이미지를 확대 기준점에 배치
-        selectImage.style.position = 'absolute';
-        selectImage.style.left = centerX - (selectImage.width / 2) + 'px';
-        selectImage.style.top = centerY - (selectImage.height / 2) + 'px';
-        selectImage.style.display = 'block'; // 새 이미지 표시
+    // 새 이미지를 확대 기준점에 배치
+    selectImage.style.position = 'absolute';
+    selectImage.style.left = centerX - (selectImage.width / 2) + 'px';
+    selectImage.style.top = centerY - (selectImage.height / 2) + 'px';
+    selectImage.style.display = 'block'; // 새 이미지 표시
+
+    // 애니메이션 완료 후 추가 설정
+    setTimeout(() => {
+        // 추가적인 동작이 필요할 경우 여기에 작성
     }, 700); // 확대 애니메이션 시간과 일치하도록 설정
 }
+
 
 
 
