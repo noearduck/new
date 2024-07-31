@@ -59,10 +59,12 @@ function zoomIn() {
     document.getElementById('highlight-frame').style.display = 'none';
     isZoomedIn = true;
 
-    // 이미지 보여주기
-    const imageContainer = document.getElementById('imageContainer');
-    imageContainer.style.display = 'block';
-    document.getElementById('selectimage').style.display = 'block';
+    // 확대 애니메이션이 완료된 후에 이미지 보여주기
+    setTimeout(() => {
+        const imageContainer = document.getElementById('imageContainer');
+        imageContainer.style.display = 'block';
+        document.getElementById('selectimage').style.display = 'block';
+    }, 500); // 확대 애니메이션 시간과 일치하도록 설정
 }
 
 function zoomOut() {
