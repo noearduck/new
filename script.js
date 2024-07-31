@@ -10,7 +10,7 @@ document.getElementById('main-image').addEventListener('mousemove', function(eve
 
     const areas = [
         {name: 'coffee', x: 90, y: 260, width: 80, height: 120},
-        {name: 'fruit', x: 300, y: 250, width: 120, height: 100},
+        {name: 'fruit', x: 300, y: 250, width: 10, height: 10},
         {name: 'desk', x: 450, y: 300, width: 100, height: 100}
     ];
 
@@ -51,36 +51,21 @@ function hideOptions() {
 
 function zoomIn() {
     const img = document.getElementById('main-image');
-    const selectImage = document.getElementById('selectimage');
     const scale = 2;
 
-    // 이미지 확대 애니메이션 시작
-    img.style.transition = 'transform 0.5s ease'; // 애니메이션 시간 설정
     img.style.transform = `scale(${scale})`;
     document.getElementById('options').style.display = 'none';
     document.getElementById('back-button').style.display = 'block';
     document.getElementById('highlight-frame').style.display = 'none';
     isZoomedIn = true;
 
-    // 확대 기준점 계산
-    const imgRect = img.getBoundingClientRect();
-    const centerX = imgRect.left + imgRect.width / 2;
-    const centerY = imgRect.top + imgRect.height / 2;
-
-    // 새 이미지를 확대 기준점에 배치
-    selectImage.style.position = 'absolute';
-    selectImage.style.left = centerX - (selectImage.width / 2) + 'px';
-    selectImage.style.top = centerY - (selectImage.height / 2) + 'px';
-    selectImage.style.display = 'block'; // 새 이미지 표시
-
-    // 애니메이션 완료 후 추가 설정
+    // 확대 애니메이션이 완료된 후에 이미지 보여주기
     setTimeout(() => {
-        // 추가적인 동작이 필요할 경우 여기에 작성
-    }, 700); // 확대 애니메이션 시간과 일치하도록 설정
+        const imageContainer = document.getElementById('imageContainer');
+        imageContainer.style.display = 'block';
+        document.getElementById('selectimage').style.display = 'block';
+    }, 500); // 확대 애니메이션 시간과 일치하도록 설정
 }
-
-
-
 
 function zoomOut() {
     const img = document.getElementById('main-image');
@@ -93,3 +78,4 @@ function zoomOut() {
 document.getElementById('closeButton').addEventListener('click', function() {
     document.getElementById('imageContainer').style.display = 'none';
 });
+
