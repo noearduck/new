@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+#main-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.highlight {
+    position: absolute;
+    border: 2px solid yellow;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+#options {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#imageContainer {
+    display: none;
+    position: fixed; /* 화면 중앙에 고정 */
+    top: 50%; /* 화면 중앙 */
+    left: 50%; /* 화면 중앙 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    width: 300px; /* 이미지 너비 */
+    height: 300px; /* 이미지 높이 */
+    z-index: 1000; /* 다른 요소들 위에 표시 */
+}
+
+#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.zoomed-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%; /* 중앙 정렬 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    display: none; /* 기본적으로 숨김 */
+}
+
+#back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+}
