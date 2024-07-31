@@ -72,8 +72,8 @@ function zoomIn() {
 
         // 새 이미지를 중앙에 배치
         selectImage.style.position = 'absolute';
-        selectImage.style.left = centerX - (selectImage.width / 2) + 'px';
-        selectImage.style.top = centerY - (selectImage.height / 2) + 'px';
+        selectImage.style.left = centerX;
+        selectImage.style.top = centerY;
         selectImage.style.display = 'block';
     }, 1000); // 확대 애니메이션 시간과 일치하도록 설정
 }
